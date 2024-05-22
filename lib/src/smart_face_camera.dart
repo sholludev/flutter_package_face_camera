@@ -55,6 +55,10 @@ class SmartFaceCamera extends StatefulWidget {
   /// Callback invoked when camera detects face.
   final void Function(Face? face)? onFaceDetected;
 
+  /// Callback invoked when camera detects face.
+  /// Auto capture image if the return is `true`.
+  final bool Function(Face? face)? captureOnFaceDetected;
+
   /// Use this to render a custom widget for capture control.
   final Widget? captureControlIcon;
 
@@ -100,6 +104,7 @@ class SmartFaceCamera extends StatefulWidget {
       this.messageStyle = const TextStyle(
           fontSize: 14, height: 1.5, fontWeight: FontWeight.w400),
       required this.onCapture,
+      this.captureOnFaceDetected,
       this.onFaceDetected,
       @Deprecated('Use [captureControlBuilder]') this.captureControlIcon,
       this.captureControlBuilder,
@@ -541,6 +546,10 @@ class _SmartFaceCameraState extends State<SmartFaceCamera>
                 }
                 if (widget.autoCapture) {
                   _onTakePictureButtonPressed();
+                } else if (widget.captureOnFaceDetected != null) {
+                  if (widget.captureOnFaceDetected!.call(result.face)) {
+                    _onTakePictureButtonPressed();
+                  }
                 }
               }
             } catch (e) {
