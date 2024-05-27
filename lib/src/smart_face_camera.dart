@@ -266,7 +266,7 @@ class _SmartFaceCameraState extends State<SmartFaceCamera>
               child: OverflowBox(
                 alignment: Alignment.center,
                 child: FittedBox(
-                  fit: BoxFit.fitHeight,
+                  fit: BoxFit.contain,
                   child: SizedBox(
                     width: size.width,
                     height: size.width * cameraController.value.aspectRatio,
