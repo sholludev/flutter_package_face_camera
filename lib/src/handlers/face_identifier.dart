@@ -88,6 +88,7 @@ class FaceIdentifier {
       required FaceDetectorMode performanceMode}) async {
     if (visionImage == null) return null;
     final options = FaceDetectorOptions(
+        enableClassification: true,
         enableLandmarks: true,
         enableTracking: true,
         performanceMode: performanceMode);
