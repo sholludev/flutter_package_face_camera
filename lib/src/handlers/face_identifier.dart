@@ -110,7 +110,7 @@ class FaceIdentifier {
 
     for (Face face in faces) {
       // rect.add(face.boundingBox);
-      detectedFace = face;
+      // detectedFace = face;
 
       // Head is rotated to the right rotY degrees
       if (face.headEulerAngleY! > 2 || face.headEulerAngleY! < -2) {
@@ -152,6 +152,10 @@ class FaceIdentifier {
         if (face.rightEyeOpenProbability! < 0.5) {
           wellPositioned = false;
         }
+      }
+
+      if (detectedFace == null || wellPositioned) {
+        detectedFace = face;
       }
     }
 
