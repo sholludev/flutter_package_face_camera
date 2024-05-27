@@ -540,18 +540,18 @@ class _SmartFaceCameraState extends State<SmartFaceCamera>
 
           if (result != null) {
             try {
-              if (result.wellPositioned) {
-                if (widget.onFaceDetected != null) {
-                  widget.onFaceDetected!.call(result.face);
-                }
-                if (widget.autoCapture) {
+              // if (result.wellPositioned) {
+              if (widget.onFaceDetected != null) {
+                widget.onFaceDetected!.call(result.face);
+              }
+              if (widget.autoCapture && result.wellPositioned) {
+                _onTakePictureButtonPressed();
+              } else if (widget.captureOnFaceDetected != null) {
+                if (widget.captureOnFaceDetected!.call(result.face)) {
                   _onTakePictureButtonPressed();
-                } else if (widget.captureOnFaceDetected != null) {
-                  if (widget.captureOnFaceDetected!.call(result.face)) {
-                    _onTakePictureButtonPressed();
-                  }
                 }
               }
+              // }
             } catch (e) {
               logError(e.toString());
             }
