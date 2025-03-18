@@ -1,3 +1,8 @@
+## 0.2.0
+
+- Update dependencies and improve compatibility for Android and Flutter.
+- improve compatibility with latest SDK version.
+
 ## 0.1.0
 
 - Improved codebase documentations.
