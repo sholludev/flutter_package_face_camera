@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "/home/adampermana/fvm/versions/3.29.3/packages/flutter_tools/gradle/src/main/groovy/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/home/adampermana/Android/Sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/home/adampermana/package/flutter_package_face_camera/example/android/app/.cxx/Debug/124p6d6o/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/home/adampermana/Android/Sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/home/adampermana/package/flutter_package_face_camera/example/android/app/.cxx/Debug/124p6d6o/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}

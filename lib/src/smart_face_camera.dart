@@ -116,12 +116,11 @@ class SmartFaceCamera extends StatefulWidget {
       this.indicatorBuilder,
       this.autoDisableCaptureControl = false,
       this.performanceMode = FaceDetectorMode.fast,
-      Key? key})
+      super.key})
       : assert(
             indicatorShape != IndicatorShape.image ||
                 indicatorAssetImage != null,
-            'IndicatorAssetImage must be provided when IndicatorShape is set to image.'),
-        super(key: key);
+            'IndicatorAssetImage must be provided when IndicatorShape is set to image.');
 
   @override
   State<SmartFaceCamera> createState() => _SmartFaceCameraState();
